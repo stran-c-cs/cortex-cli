@@ -131,7 +131,8 @@ program
     .option('--environment [environment]', 'Environment')
     .option('--cmd [cmd]', 'Command to be executed')    //'["--daemon"]'
     .option('--environmentVariables [environmentVariables]', 'Docker container environment variables, only used for daemon action types')
-    .option('--push-docker', 'Push Docker image to the Cortex registry.')    
+    .option('--ttl [TTL]', 'Time to live for daemon stacks, only used for daemon action types')
+    .option('--push-docker', 'Push Docker image to the Cortex registry.')
     .action(withCompatibilityCheck((actionName, options) => {
         try {
             if (!options.kind && !options.docker) {
